@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios</title>
+    <link rel="stylesheet" href="../Inicio/inicio.css">
+    <link rel="icon" type="image/png" href="vecteezy_cycling_1196511.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Inicio/seccioncomentar.css">
+</head>
+
+<body>
+    <header class="climbikes">
+        <div class="ancho">
+            <img class="logo" src="vecteezy_cycling_1196511.png" alt="Logo de ClimBikes">
+            <h1> ClimBikes</h1>
+        </div>
+        <div>
+            <img class="hamburger" src="../Inicio/588a64fed06f6719692a2d14 (1).png" alt="Menú">
+        </div>
+    </header>
+
+    <header>
+        <nav class="menu-navegacion spread">
+            <a class="navegacion" href="../Inicio/inicio.html" target="_blank">Inicio</a>
+            <a class="navegacion" href="../Programas/programas.html" target="_blank">Nuestros Programas</a>
+            <a class="navegacion" href="../Sedes/sedes.html" target="_blank">Nuestras sedes</a>
+            <a class="navegacion" href="../Formulario/inscribirse.html" target="_blank">Matricúlate</a>
+            <a class="navegacion" href="../Inicio/seccioncomentar.html" target="_blank">Caja de Comentarios</a>
+            <a class="navegacion" href="../Carrito/carrito.html" target="_blank">Carrito de Compras</a>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu-navegacion');
+
+        console.log(menu)
+        console.log(hamburger)
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle("spread")
+        })
+    </script>
+
+    <br><br><br>
+
+    <header class="body">
+        <section class="contenedor">
+            <section class="contenedor-agg-com">
+                <div class="imagen-usuario">
+                    <img src="../Inicio/kisspng-computer-icons-user-clip-art-user-5abf13db5624e4.1771742215224718993529.png"
+                        alt="usuario" class="img">
+                </div>
+
+                <div>
+                    <div class="input-com">
+                        <form id="form">
+                            <div class="datos">
+                                <label>Nombre y apellido:<input id="nombre" name="name" type="text" placeholder="Ingrese nombre y apellido" required
+                                    class="form-control datoInput"></label>
+                                <label>Correo:<input id="correo" name="name" type="email" placeholder="Ingrese su E-mail" required
+                                    class="form-control datoInput"></label>
+                            </div>
+                            <input id="comentar" name="name" type="text" placeholder="Escriba aquí tu comentario..."
+                                class="form-control datoInput">
+                            <br><br><br>
+                            <div class="btn-agg">
+                                <button id="btnComentar">Postear comentario</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <br>
+
+        <div class="conten" id="container">
+
+        </div>
+    </header>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getFirestore, setDoc, collection, addDoc, getDocs, getDoc, query, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAx9bnZQaya9vor_ckf91Z3bOoCM80pJG8",
+            authDomain: "ciclismo-4399c.firebaseapp.com",
+            projectId: "ciclismo-4399c",
+            storageBucket: "ciclismo-4399c.appspot.com",
+            messagingSenderId: "525797036363",
+            appId: "1:525797036363:web:c981e58440922ec2e718ce"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        var formulario = document.getElementById("form");
+
+        var editStatus = false;
+        var id = 0; 
+
+        formulario.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            var nombre = document.getElementById("nombre").value;
+            var correo = document.getElementById("correo").value;
+            var comentar = document.getElementById("comentar").value;
+
+            if (editStatus) 
+            {
+                await setDoc(doc(db, "comentarios", id), {
+                    name: nombre,
+                    email: correo,
+                    comentary: comentar
+                });
+                id = 0;
+                editStatus = false
+                document.getElementById("btnComentar").innerText = "Comentar";
+                document.getElementById("nombre").value = "";
+                document.getElementById("correo").value = "";
+                document.getElementById("comentar").value = "";
+            }
+
+            else
+            {
+                try {
+                    const docRef = await addDoc(collection(db, "comentarios"), {
+                        name: nombre,
+                        email: correo,
+                        comentary: comentar
+                    });
+                    document.getElementById("nombre").value = "";
+                    document.getElementById("correo").value = "";
+                    document.getElementById("comentar").value = "";
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+            }
+        })
+
+        window.addEventListener("DOMContentLoaded", async () => {
+            var listado = document.getElementById("container");
+
+            const q = query(collection(db, "comentarios"));
+
+            const unsubscribe = onSnapshot(q, (coleccion) => {
+                listado.innerHTML = "";
+                coleccion.forEach((docu) => {
+                    listado.innerHTML = listado.innerHTML +
+                        "<div class='borde'>" +
+                        "<img src='../Inicio/kisspng-computer-icons-user-clip-art-user-5abf13db5624e4.1771742215224718993529.png'" +
+                        "<h3 class='usuario'>" + docu.data().name + "</h3>" +
+                        "<p class='comentarioss'> Comentario: </p>" +
+                        "<h3>" + docu.data().comentary + "</h3>" +
+                        "<div>" +
+                        "<button class='btn-edit' data-id='" + docu.id + "'>Editar</button>" +
+                        "<button class='btn-delete' data-id='" + docu.id + "'>Eliminar</button>" +
+                        "</div>" +
+                        "</div>";
+                    
+                    const botonesEditar = document.querySelectorAll(".btn-edit");
+                    botonesEditar.forEach((boton) => {
+                        boton.addEventListener("click", async (eve) => {
+                            editStatus = true;
+                            id = eve.target.dataset.id;
+                            const docRef = doc(db, "comentarios", eve.target.dataset.id);
+                            const docSnap = await getDoc(docRef);
+
+                            if (docSnap.exists()) {
+                                document.getElementById("nombre").value = docSnap.data().name;
+                                document.getElementById("correo").value = docSnap.data().email;
+                                document.getElementById("comentar").value = docSnap.data().comentary;
+                            } else {
+                                // doc.data() will be undefined in this case
+                                console.log("No such document!");
+                            }
+                            document.getElementById("btnComentar").innerText = "Actualizar";
+                        })
+                    })
+
+                    const botonesDelete = document.querySelectorAll(".btn-delete");
+                    botonesDelete.forEach((boton) => {
+                        boton.addEventListener("click", async (evento) => {
+                            await deleteDoc(doc(db, "comentarios", evento.target.dataset.id));
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

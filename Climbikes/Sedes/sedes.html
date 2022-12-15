@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras sedes</title>
+    <link rel="stylesheet" href="../Sedes/sedes.css">
+    <link rel="icon" type="image/png" href="../Inicio/vecteezy_cycling_1196511.png">
+</head>
+<body>
+    <header class="climbikes">
+        <div class="ancho">
+            <img class="logo spread" src="vecteezy_cycling_1196511.png" alt="Logo de ClimBikes">
+            <h1> ClimBikes</h1>
+        </div>
+        <div>
+            <img class="hamburger" src="../Inicio/588a64fed06f6719692a2d14 (1).png" alt="Menú">
+        </div>
+    </header>
+
+    <header>
+        <nav class="menu-navegacion">
+            <a class="navegacion" href="../Inicio/inicio.html" target="_blank">Inicio</a> 
+            <a class="navegacion" href="../Programas/programas.html" target="_blank">Nuestros Programas</a>
+            <a class="navegacion" href="../Sedes/sedes.html" target="_blank">Nuestras sedes</a>
+            <a class="navegacion" href="../Formulario/inscribirse.html" target="_blank">Matricúlate</a>
+            <a class="navegacion" href="../Inicio/seccioncomentar.html" target="_blank">Caja de Comentarios</a>
+            <a class="navegacion" href="../Carrito/carrito.html" target="_blank">Carrito de Compras</a>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu-navegacion');
+
+        console.log(menu)
+        console.log(hamburger)
+
+        hamburger.addEventListener('click', ()=>{
+            menu.classList.toggle("spread")
+        })
+    </script>
+    
+    <main>
+        <section id="regresar">
+            <header class="titulo">
+                <h1>Conóce nuestras sedes</h1>
+            </header>
+        </section>
+
+        <section>
+            <img src="Nuestras sedes.jpg" alt="Ciclistas" width="100%">
+            <h2 class="letra">
+                ¡Contamos con tres diferentes sedes para cada uno de nuestros programas para una grata experiencia llena de adrenalina y aventura!
+            </h2>
+        </section>
+
+        <table>
+            <tr>
+                <td class="cuadro">
+                    <img src="bd.jpg" alt="Velódromo" width="100%">
+                </td>
+                <td class="cuadro">
+                    <aside class="cuadro-2">
+                        <h1>SEDE EN LIMA CENTRO</h1>
+                        <h2>Av. Alfonso Ugarte - Altura Puente del Ejército.</h2>
+                        <h3>Ciclismo en pista.</h3>
+                    </aside>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="cuadro">
+                    <img src="b10.jpg" alt="Complejo Deportivo" width="100%">
+                </td>
+                <td class="cuadro">
+                    <aside class="cuadro-2">
+                        <h1>SEDE EN PUEBLO LIBRE</h1>
+                        <h2>Complejo Deportivo, Jr. José Manuel Ugarteche.</h2>
+                        <h3>Ciclismo en sala:</h3>
+                        <h4 class="tipos">Artístico.</h4>
+                        <h4 class="tipos">Ciclobol.</h4>
+                    </aside>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="cuadro">
+                    <img src="b11.jpg" alt="Morro Solar" width="100%">
+                </td>
+                <td class="cuadro">
+                    <aside class="cuadro-2">
+                        <h1>SEDE EN CHORRILLOS</h1>
+                        <h2>Morro Solar, Open Team Pro - Chorrillos 15067.</h2>
+                        <h3>Ciclismo Extremo:</h3>
+                        <h4 class="tipos">Montaña.</h4>
+                        <h4 class="tipos">Urbano (Downhill).</h4>
+                    </aside>
+                </td>
+            </tr>
+        </table>
+        
+        <br><br><br>
+
+        <section id="asd">
+            <nav>
+                <a href="#regresar">Regresar</a>
+            </nav>
+        </section>
+    </main>  
+
+    <br><br>
+
+    <footer class="derechos">
+        <h2>@Derechos Reservados.</h2>
+    </footer>
+</body>
+</html>

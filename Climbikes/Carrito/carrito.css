@@ -1,0 +1,162 @@
+.climbikes{
+    width: 100.3%;
+    background-color: rgb(177, 112, 177);
+    height: 80px;
+    box-shadow: 0 0 6px rgb(105, 99, 99);
+}
+
+.hamburger{
+    position: fixed;
+    z-index: 10;
+    width: 2.4%;
+    height: 4%;
+    padding-left: 800px;
+    padding-top: 29px;
+    cursor: pointer;
+}
+
+.menu-navegacion{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100%;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: translate(110%);
+    box-shadow: 0 0 9px rgb(104, 104, 104);
+}
+
+.navegacion{
+    color: rgb(141, 36, 141);
+    font-family: Calibri;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.ancho{
+    display: flex;
+    width: 30%;
+    height: 70px;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 60px; 
+    color: darkred;
+}
+
+.logo{
+    padding-right: 15px;
+    padding-top: 13px;
+    width: 50px;
+    height: 50px;
+}
+
+.spread{
+    transform: translate(0);
+}
+
+.articulo{
+    border: 1px solid rgb(26, 26, 158);
+    margin: 18.5px;
+    align-items: center;
+    box-shadow: 0 0 7px rgb(40, 44, 44);
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    height: 490px;
+    background-color: white;
+}
+
+.centro{
+    display: flex;
+    width: 20px;
+}
+
+.img{
+    margin: 20px;
+}
+
+.carrito{
+    margin: 20px;
+    display: flex;
+}
+
+.titulo{
+    text-align: center;
+    font-family: Cambria;
+    color: darkred;
+}
+
+.input-com{
+    box-shadow: 0 0 10px rgb(40, 44, 44);
+    width: 450px;
+    margin: 0% auto;
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
+    background-blend-mode: multiply;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.aqui{
+    color: darkred;
+    text-align: center;
+    margin: 5px;
+    font-size: 20px;
+    font-family: Cambria;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.formulario{
+    font-size: 17px;
+    padding-right: 235px;
+    margin-bottom: 15px;
+    font-family: Calibri;
+}
+
+.formu{
+    font-size: 19px;
+    padding-right: 194px;
+    margin-bottom: 15px;
+    font-family: Calibri;
+}
+
+.pedido{
+    font-size: 17px;
+    padding-right: 235px;
+    font-family: Calibri;
+}
+
+#direccionC{
+    width: 404px;
+    font-family: Calibri;
+}
+
+.direction{
+    color: white;
+    font-family: Cambria;
+}
+
+.botoness{
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+body{
+    background-color: #c6cae8;
+}
+
+.mi{
+    margin-left: 10px;
+    font-family: Cambria;
+    font-size: 25px;
+    color: darkred;
+}

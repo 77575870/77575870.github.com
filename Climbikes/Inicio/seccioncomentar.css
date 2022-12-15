@@ -1,0 +1,10 @@
+*{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+body{
+    background-image: url(https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg);
+    background-size: 1380px 850px;
+    image-rendering: optimizeQuality;
+}

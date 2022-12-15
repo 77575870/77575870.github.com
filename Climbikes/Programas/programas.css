@@ -1,0 +1,200 @@
+.climbikes{
+    width: 100.5%;
+    background-color: rgb(177, 112, 177);
+    box-shadow: 0 0 6px rgb(140, 125, 125);
+    height: 80px;
+}
+
+.hamburger{
+    position: fixed;
+    z-index: 10;
+    width: 2.4%;
+    height: 4%;
+    padding-left: 800px;
+    padding-top: 29px;
+    cursor: pointer;
+}
+
+.menu-navegacion{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100%;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: translate(110%);
+    box-shadow: 0 0 9px rgb(104, 104, 104);
+}
+
+.navegacion{
+    color: rgb(141, 36, 141);
+    font-family: Calibri;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.ancho{
+    display: flex;
+    width: 30%;
+    height: 70px;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 60px; 
+    color: darkred;
+}
+
+.logo{
+    padding-right: 15px;
+    padding-top: 13px;
+    width: 50px;
+    height: 50px;
+}
+
+.spread{
+    transform: translate(0);
+}
+
+.enlace{
+    text-decoration: none;
+    color: purple;
+    font-size: 20px;
+    font-family: Calibri;
+}
+
+section[class="contenido10"]{
+    display: flex;
+}
+
+div[class="contenido_10"]{
+    background-image: linear-gradient(-225deg, #7DE2FC 0%, #827af0 100%);
+    padding: 23px;
+    color: darkred;
+    font-family: Calibri;
+    font-size: 15px;
+    width: 350px;
+    height: 453.5px;
+}
+
+img[src="../Programas/bicccc.jpg"]{
+    width: 850px; 
+    height: 500px;
+}
+
+.titulo{
+    margin-top: 40px;
+    margin-bottom: 45px;
+    font-size: 40px;
+    color: darkred;
+    text-align: center;
+    font-family: Cambria;
+}
+
+.subtitulo1{
+    font-size: 30px;
+    color: darkred;
+    font-family: cambria;
+    margin: 20px;
+}
+
+ol[class="contenido1"]{
+    margin: 20px;
+}
+
+section[class="subtitulo2"]{
+    font-size: 23px;
+    color: rgb(168, 0, 0);
+    font-family: Cambria;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    padding: 10px 10px 10px 10px;
+    border: 1px solid rgb(83, 106, 108);
+    text-align: center;
+    border-radius: 10px;
+}
+
+img[src="bicccc.jpg"]{
+    width: 570px;
+    margin-left: 10px;
+}
+
+.cuadro1{
+    background-color: rgb(211, 211, 211);
+    border: 3px solid rgb(211, 151, 151);
+    padding: 40px;
+    color: rgb(43, 43, 114);
+    font-size: 20px;
+    font-family: Calibri;
+    text-align: center;
+}
+
+.principal1, .cuadro1>h2{
+    background: white;
+    color: rgb(247, 8, 8);
+    font-size: 30px;
+    padding: 2px;
+    text-align: center;
+    border: 2px dashed black;
+}
+
+.imagen2{
+    background-color: rgb(211, 211, 211);
+    border: 3px solid rgb(211, 151, 151);
+    padding: 25px;
+}
+
+.principal1>p{
+    color: blueviolet;
+}
+
+img[src="ciclismo-artistico.jpg"]{
+    width: 260px;
+    height: 270px;
+}
+
+img[src="vian-ciclobol.jpg"]{
+    width: 240px;
+    height: 240px;
+}
+
+.cuadro2{
+    background-color: rgb(211, 211, 211);
+    border: 3px solid rgb(211, 151, 151);
+    padding-left: 49px;
+    padding-right: 30px;
+    color: rgb(43, 43, 114);
+    font-size: 23px;
+    font-family: Calibri;
+}
+
+.imagen3{
+    background-color: rgb(211, 211, 211);
+    border: 5px solid rgb(211, 151, 151);
+    padding: 10px;
+    width: 270;
+    height: 270;
+}
+
+.subtitulo3{
+    font-size: 30px;
+    color: darkred;
+    font-family: cambria;
+    background: rgb(211, 211, 211);
+    padding: 10px 10px 10px 10px;
+    border: 5px solid;
+    text-align: center;
+    margin: auto;
+}
+
+.cuadro3{
+    background-color: rgb(211, 211, 211);
+    border: 5px solid rgb(211, 151, 151);
+}
+
+.pie{
+    font-family: Calibri light;
+    font-size: 12px;
+    color: rgb(90, 86, 86);
+}

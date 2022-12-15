@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscríbete</title>
+    <link rel="stylesheet" href="matricula.css">
+    <link rel="icon" type="image/png" href="../Formulario/vecteezy_cycling_1196511.png">
+</head>
+
+<body>
+    <header class="climbikes">
+        <div class="ancho">
+            <img class="logo" src="vecteezy_cycling_1196511.png" alt="Logo de ClimBikes">
+            <h1> ClimBikes</h1>
+        </div>
+        <div>
+            <img class="hamburger" src="../Inicio/588a64fed06f6719692a2d14 (1).png" alt="Menú">
+        </div>
+    </header>
+
+    <header>
+        <nav class="menu-navegacion spread">
+            <a class="navegacion" href="../Inicio/inicio.html" target="_blank">Inicio</a>
+            <a class="navegacion" href="../Programas/programas.html" target="_blank">Nuestros Programas</a>
+            <a class="navegacion" href="../Sedes/sedes.html" target="_blank">Nuestras sedes</a>
+            <a class="navegacion" href="../Formulario/inscribirse.html" target="_blank">Matricúlate</a>
+            <a class="navegacion" href="../Inicio/seccioncomentar.html" target="_blank">Caja de Comentarios</a>
+            <a class="navegacion" href="../Carrito/carrito.html" target="_blank">Carrito de Compras</a>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu-navegacion');
+
+        console.log(menu)
+        console.log(hamburger)
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle("spread")
+        })
+    </script>
+
+    <br><br><br>
+
+    <h1>
+        <p class="titulo1">¡Inscríbete aquí!</p>
+    </h1>
+
+    <br>
+
+    <p class="subtitulo1">Inscríbete para que puedas participar en este maravilloso
+        <br> mundo de la bicicleta y ser un profesional en eso.
+    </p>
+
+    <header class="body">
+        <section class="contenedor">
+            <section class="contenedor-agg-com">
+                <div>
+                    <div class="input-com">
+                        <form id="form">
+                            <h2 class="inicio">NO PIERDAS LA OPORTUNIDAD Y SER PARTE DE ESTA ACADEMIA DE CICLISMO</h2>
+                            <br>
+                            <div>
+                                <input id="nombre" name="name" type="text" placeholder="Nombre" required
+                                    class="formulario">
+                            </div>
+                            <div>
+                                <input id="apellidoPa" type="text" placeholder="Apellido Paterno" required
+                                    class="formulario">
+                            </div>
+                            <div>
+                                <input id="apellidoMa" type="text" placeholder="Apellido Materno" required
+                                    class="formulario">
+                            </div>
+                            <div>
+                                <input id="celular" type="number" placeholder="Celular" required class="formulario" maxlength="9">
+                            </div>
+                            <div>
+                                <input id="correo" type="email" placeholder="Email" required class="formulario">
+                            </div>
+
+                            <select id="sede" class="formulario">
+                                <option>Cercado de Lima</option>
+                                <option>Chorrillos</option>
+                                <option>Pueblo Libre</option>
+                                <option selected>Sede de Interés</option>
+                            </select>
+
+                            <br>
+                            <div class="condiciones">
+                                <label class="letra"><input type="checkbox">He leído y acepto las Políticas de
+                                    Privacidad.</label>
+                                <br>
+                                <label class="letra"><input type="checkbox">Autorizo el envío de publicidad e
+                                    información
+                                    comercial.</label>
+                            </div>
+                            <br>
+                            <div>
+                                <button id="btnComentar" onclick="enviar()" class="formulario">Guardar</button>
+                            </div>
+                            <div>
+                                <input type="reset" value="Limpiar" class="formulario">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <br>
+
+        <div class="conten" id="container">
+
+        </div>
+    </header>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getFirestore, collection, addDoc, getDocs, query, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBgO23nnOovq_-v_-NSaW_V1NQ6bV-5A4w",
+            authDomain: "formularios-b46c3.firebaseapp.com",
+            projectId: "formularios-b46c3",
+            storageBucket: "formularios-b46c3.appspot.com",
+            messagingSenderId: "70085346014",
+            appId: "1:70085346014:web:8988de3a6d867038eaf84f",
+            measurementId: "G-BXQP830811"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        var formulario = document.getElementById("form");
+
+        formulario.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            var nombre = document.getElementById("nombre").value;
+            var apellidoPa = document.getElementById("apellidoPa").value;
+            var apellidoMa = document.getElementById("apellidoMa").value;
+            var celular = document.getElementById("celular").value;
+            var correo = document.getElementById("correo").value;
+            var sede = document.getElementById("sede").value;
+
+            try {
+                const docRef = await addDoc(collection(db, "formulario"), {
+                    name: nombre,
+                    lastname1: apellidoPa,
+                    lastname2: apellidoMa,
+                    cellphone: celular,
+                    email: correo,
+                    campus: sede
+                });
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+        })
+    </script>
+</body>
+
+</html>

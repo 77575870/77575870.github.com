@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="icon" type="image/png" href="vecteezy_cycling_1196511.png">
+    <link rel="stylesheet" href="../Carrito/seccionregistrar.css">
+    <link rel="icon" type="image/png" href="vecteezy_cycling_1196511.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="climbikes">
+        <div class="ancho">
+            <img class="logo" src="vecteezy_cycling_1196511.png" alt="Logo de ClimBikes">
+            <h1> ClimBikes</h1>
+        </div>
+        <div>
+            <img class="hamburger" src="../Inicio/588a64fed06f6719692a2d14 (1).png" alt="Menú">
+        </div>
+    </header>
+
+    <header>
+        <nav class="menu-navegacion spread">
+            <a class="navegacion" href="../Inicio/inicio.html" target="_blank">Inicio</a>
+            <a class="navegacion" href="../Programas/programas.html" target="_blank">Nuestros Programas</a>
+            <a class="navegacion" href="../Sedes/sedes.html" target="_blank">Nuestras sedes</a>
+            <a class="navegacion" href="../Formulario/inscribirse.html" target="_blank">Matricúlate</a>
+            <a class="navegacion" href="../Inicio/seccioncomentar.html" target="_blank">Caja de Comentarios</a>
+            <a class="navegacion" href="../Carrito/carrito.html" target="_blank">Carrito de Compras</a>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu-navegacion');
+
+        console.log(menu)
+        console.log(hamburger)
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle("spread")
+        })
+    </script>
+
+    <main>
+        <div class="register">
+            <div class="input-data">
+                <form>
+                    <h2 class="registro">Regístrate</h2>
+                    <br>
+                    <input id="correoR" type="email" placeholder="Correo Electrónico" required class="formulario">
+                    <br>
+                    <input id="contraR" type="password" placeholder="Contraseña" required class="formulario">
+                    <br>
+                    <div>
+                        <button id="btnRegister" type="submit" class="boton">Registrarse</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+
+            <div>
+                <h2 class="titulo2">¿Ya tienes una cuenta?</h2>
+                <br><br><br>
+                <a href="../Carrito/logearse.html" class="boton2">Iniciar sesión</a>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBDYPrBwWZMEJ3WPxuQoSRa6WlwMZwC_6E",
+            authDomain: "register-803e4.firebaseapp.com",
+            projectId: "register-803e4",
+            storageBucket: "register-803e4.appspot.com",
+            messagingSenderId: "101001509504",
+            appId: "1:101001509504:web:e21cc2b5a98bc55d988465"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        document.getElementById("btnRegister").addEventListener("click", () => {
+            var usrVar = document.getElementById("correoR").value;
+            var pwdVar = document.getElementById("contraR").value;
+
+            createUserWithEmailAndPassword(auth, usrVar, pwdVar)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    // ...
+                    console.log("Creado");
+                    console.log(user);
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                    console.log(errorMessage);
+                });
+        });
+    </script>
+</body>
+
+</html>

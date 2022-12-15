@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="../Carrito/carrito.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="climbikes">
+        <div class="ancho">
+            <img class="logo" src="vecteezy_cycling_1196511.png" alt="Logo de ClimBikes">
+            <h1> ClimBikes</h1>
+        </div>
+        <div>
+            <img class="hamburger" src="../Inicio/588a64fed06f6719692a2d14 (1).png" alt="Menú">
+        </div>
+    </header>
+
+    <header>
+        <nav class="menu-navegacion spread">
+            <a class="navegacion" href="../Inicio/inicio.html" target="_blank">Inicio</a>
+            <a class="navegacion" href="../Programas/programas.html" target="_blank">Nuestros Programas</a>
+            <a class="navegacion" href="../Sedes/sedes.html" target="_blank">Nuestras sedes</a>
+            <a class="navegacion" href="../Formulario/inscribirse.html" target="_blank">Matricúlate</a>
+            <a class="navegacion" href="../Inicio/seccioncomentar.html" target="_blank">Caja de Comentarios</a>
+            <a class="navegacion" href="../Carrito/carrito.html" target="_blank">Carrito de Compras</a>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu-navegacion');
+
+        console.log(menu)
+        console.log(hamburger)
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle("spread")
+        })
+    </script>
+
+    <header>
+        <br><br>
+        <h1 class="titulo">Bienvenido al Carrito de Compras de Climbikes</h1>
+    </header>
+
+    <header class="body">
+        <section class="contenedor">
+            <section class="contenedor-agg-com">
+                <div>
+                    <div class="input-com">
+                        <form id="form">
+                            <div>
+                                <h2 class="aqui">Haga sus pedidos aquí</h2>
+                            </div>
+                            <div>
+                                <input id="nombre" name="name" type="text" placeholder="Nombres..." required
+                                    class="formulario">
+                            </div>
+                            <div>
+                                <input id="apellidoC" type="text" placeholder="Apellidos..." required
+                                    class="formulario">
+                            </div>
+                            <div>
+                                <input id="celularC" type="number" placeholder="Celular..." required class="formulario">
+                            </div>
+                            <div>
+                                <input id="emailC" type="email" placeholder="Correo Electrónico..." required
+                                    class="formulario">
+                            </div>
+
+                            <select id="pedidoC" class="formu">
+                                <option>Casco</option>
+                                <option>Biclcleta Montañera</option>
+                                <option>Kit de protección</option>
+                                <option>Luz delantera con timbre</option>
+                                <option>Luz trasera</option>
+                                <option>Bicicleta para Niños</option>
+                                <option>Soporte de Celular</option>
+                                <option>Lentes de Ciclismo</option>
+                                <option selected>Pedidos</option>
+                            </select>
+
+                            <div>
+                                <input id="cantidadC" type="number" placeholder="Unidades..." required
+                                    class="pedido">
+                            </div>
+
+                            <div>
+                                <p class="direction">Dirección:</p>
+                                <Textarea id="direccionC" name="name" rows="5" cols="80"
+                                    placeholder="Lugar de entrega..."></Textarea>
+                            </div>
+
+                            <br>
+                            <div>
+                                <button id="btnComentar" onclick="enviar()" class="botoness">Guardar</button>
+                            </div>
+                            <div>
+                                <input type="reset" value="Limpiar" class="botoness">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <br>
+
+        <div class="conten" id="container">
+
+        </div>
+    </header>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getFirestore, collection, addDoc, getDocs, query, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCcfRqRRdKcyOdpin4kqAD4skqOoFCRTM4",
+            authDomain: "carrito-e2954.firebaseapp.com",
+            projectId: "carrito-e2954",
+            storageBucket: "carrito-e2954.appspot.com",
+            messagingSenderId: "409048371634",
+            appId: "1:409048371634:web:e7c9bdefa43f6ebc5694ab"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        var formulario = document.getElementById("form");
+
+        formulario.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            var nombre = document.getElementById("nombre").value;
+            var apellidoC = document.getElementById("apellidoC").value;
+            var celularC = document.getElementById("celularC").value;
+            var emailC = document.getElementById("emailC").value;
+            var pedidoC = document.getElementById("pedidoC").value;
+            var cantidadC = document.getElementById("cantidadC").value;
+            var direccionC = document.getElementById("direccionC").value;
+
+            try {
+                const docRef = await addDoc(collection(db, "carrito"), {
+                    name: nombre,
+                    lastname: apellidoC,
+                    cellphone: celularC,
+                    email: emailC,
+                    order: pedidoC,
+                    amount: cantidadC,
+                    address: direccionC
+                });
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+        })
+    </script>
+
+    <section class="carrito">
+        <img src="../Carrito/pngwing.com.png" alt="Mi carrito" width="50px" height="60px">
+        <h1 class="mi">Mi Carrito</h1>
+    </section>
+
+    <section class="centro">
+        <section class="articulo">
+            <div class="img">
+                <img src="../Carrito/c1.jpg" alt="Casco" width="220px">
+            </div>
+            <div>
+                <h2>Casco</h2>
+                <h4>S/.80.00</h4>
+            </div>
+            <div class="btnComprar">
+                <button>Comprar</button>
+            </div>
+        </section>
+
+        <section class="articulo">
+            <div class="img">
+                <img src="../Carrito/bicicleta.jpg" alt="Bicicleta" width="240px">
+            </div>
+            <div>
+                <h2>Bicicleta Montañera</h2>
+                <h4>S/.699.90</h4>
+            </div>
+            <div>
+                <button>Comprar</button>
+            </div>
+        </section>
+
+        <section class="articulo">
+            <div class="img">
+                <img src="../Carrito/kit de codera y rodillera.jpg" alt="Kit de coderas y rodilleras" width="240px">
+            </div>
+            <div>
+                <h2>Kit de protección - Coderas, Rodilleras y Muñequera</h2>
+                <h4>S/.75.90</h4>
+            </div>
+            <div>
+                <button>Comprar</button>
+            </div>
+        </section>
+
+        <section class="articulo">
+            <div class="img">
+                <img src="../Carrito/Luz.jpg" alt="Faro de luz delantera" width="230px" height="230px">
+            </div>
+            <div>
+                <h2>Faro Luz Delantera con Timbre</h2>
+                <h4>S/.29.90</h4>
+            </div>
+            <div>
+                <button>Comprar</button>
+            </div>
+        </section>
+    </section>
+
+    <section class="centro">
+        <section class="articulo">
+            <div class="img">
+                <img src="../Carrito/trasera.jpg" alt="Luz trasera" width="220px">
+            </div>
+            <div>
+                <h2>Luz Trasera</h2>
+                <h4>S/.29.90</h4>
+            </div>
+            <div class="btnComprar">
+                <button>Comprar</button>
+            </div>
+        </section>
+
+        <section class="articulo">
+            <div class="img">
+                <img src="../Carrito/niños.jpg" alt="Bicicleta para niños" width="240px" height="220px">
+            </div>
+            <div>
+                <h2>Bicicleta para Niños</h2>
+                <h4>S/.699.90</h4>
+            </div>
+            <div>
+                <button>Comprar</button>
+            </div>
+        </section>
+
+        <section class="articulo">
+            <div class="img">
+                <img src="../Carrito/sujetador.jpg" alt="Sujetador para celulares" width="240px" height="220px">
+            </div>
+            <div>
+                <h2>Soporte de Celular</h2>
+                <h4>S/.24.90</h4>
+            </div>
+            <div>
+                <button>Comprar</button>
+            </div>
+        </section>
+
+        <section class="articulo">
+            <div class="img">
+                <img src="../Carrito/lentes.jpg" alt="Lentes de ciclismo" width="230px" height="230px">
+            </div>
+            <div>
+                <h2>Lentes de Ciclismo</h2>
+                <h4>S/.99.90</h4>
+            </div>
+            <div>
+                <button>Comprar</button>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>

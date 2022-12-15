@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../Inicio/inicio.css">
+    <link rel="icon" type="image/png" href="vecteezy_cycling_1196511.png">
+</head>
+
+<body>
+    <header class="climbikes">
+        <div class="ancho">
+            <img class="logo" src="vecteezy_cycling_1196511.png" alt="Logo de ClimBikes">
+            <h1> ClimBikes</h1>
+        </div>
+        <div>
+            <img class="hamburger" src="../Inicio/588a64fed06f6719692a2d14 (1).png" alt="Menú">
+        </div>
+    </header>
+
+    <header>
+        <nav class="menu-navegacion spread">
+            <a class="navegacion" href="../Inicio/inicio.html" target="_blank">Inicio</a> 
+            <a class="navegacion" href="../Programas/programas.html" target="_blank">Nuestros Programas</a>
+            <a class="navegacion" href="../Sedes/sedes.html" target="_blank">Nuestras sedes</a>
+            <a class="navegacion" href="../Formulario/inscribirse.html" target="_blank">Matricúlate</a>
+            <a class="navegacion" href="../Inicio/seccioncomentar.html" target="_blank">Caja de Comentarios</a>
+            <a class="navegacion" href="../Carrito/carrito.html" target="_blank">Carrito de Compras</a>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu-navegacion');
+
+        console.log(menu)
+        console.log(hamburger)
+
+        hamburger.addEventListener('click', ()=>{
+            menu.classList.toggle("spread")
+        })
+    </script>
+
+    <main>
+        <section id="navegador">
+            <h1 class="bienvenida">¡SEAN BIENVENIDOS A CLIMBIKES!</h1>
+            <img src="a2.jpg" alt="Portada" width="100%">
+        </section>
+
+        <header id="asd">
+            <a href="#somos">¿Quiénes somos?</a>
+            <a href="#elegirnos">¿Por qué elegirnos?</a>
+            <a href="#beneficios">¡Beneficios del ciclismo!</a>
+            <a href="#comentarios">¡Déjanos tus comentarios!</a>
+        </header>
+        
+        <section id="somos">
+            <h2>¿Quiénes somos?</h2>
+            <p> Somos una academia que trabajamos mano a mano con nuestros estudiantes por el amor a este deporte, 
+                formando buenos deportistas aptos, tanto como para participar en competencias y ser un
+                profesional o simplemente por ócio. 
+            </p>
+
+            <div class="mision">
+                <h3>Nuestra misión:</h3>
+                <p>
+                    Fomentar este deporte para que más personas se animen a practicarlo, brindando a sus asociados, familiares e
+                    invitados un ambiente agradable. Calidad en las actividades a desarrollar, departiendo y estrechando lazos 
+                    de amistad.
+                </p>
+                <img src="c4.jpeg" alt="Ciclistas">
+            </div>
+        </section>
+
+        <section id="elegirnos">
+            <h2>¿Por qué elegirnos?</h2>
+            <div class="mision">
+                <p>► Facilitamos desde metodologías de entrenamiento, bicicletas y herramientas del deporte, y hacemos 
+                seguimiento para lograr el progreso contínuo en esta disciplina.</p> 
+                <p>► Facilitamos el acceso a bicicletas de segunda mano para empezar con los entrenamientos.</p>
+                <p>► Brindamos material teórico sobre el deporte, metodologías de entrenamiento, fichas de seguimientos, etc.</p>
+                <p>► Brindamos talleres de capacitación para atletas y entrenadores, hacemos seguimiento para el aprendizaje de 
+                figuras básicas a avanzadas.<p>
+
+                <p class="ciclismo">
+                    ¡Buscamos personas interesadas en promover el deporte!
+                </p>
+                <img src="a1.jpg" alt="Niños en bicicleta" width="55%">
+            </div>
+        </section>
+
+        <section id="beneficios">
+            <h2>¡Beneficios del ciclismo!</h2>
+            <p>
+                El ciclismo tiene muchos beneficios, algunos son más conocidos que otros y, además de que todos podemos disfrutar de ellos fácilmente. 
+                Son mucho más extensos que ahorrarte tiempo en tus traslados, dinero en la manutención de un automóvil particular o el pasaje del 
+                transporte público.
+            </p>
+            
+            <section class="bicicleta2">
+                <div class="bicicleta_bene">
+                    <h1>Mejora las funciones cognitivas:</h1>
+                    <p class="bici">Pedalear todos los días es un potente combustible para tu cerebro.</p>
+                    <div>
+                        <img src="../Inicio/Lovepik_com-402167135-brain.png" alt="Cerebro" width="33%" height="33%">
+                    </div>
+                </div>
+                <div class="bicicleta_bene">
+                    <h1>Contamina menos:</h1>
+                    <p class="bici">La bicicleta es un medio de transporte limpio. Todos debemos preocuparnos por la conservación 
+                    del medio ambiente y esta es una opción de movilidad no contaminante perfecta.</p>
+                    <div>
+                        <img src="../Inicio/Lovepik_com-450008166-Planet Earth.png" alt="Planeta" width="35%" height="35%">
+                    </div>
+                </div>
+                <div class="bicicleta_bene">
+                    <h1>Incrementa la expectativa de vida:</h1>
+                    <p class="bici">La actividad física reduce el riesgo de desarrollar enfermedades como la hipertensión, 
+                    diabetes y el cáncer. Además, reduce el riesgo de tener enfermedades mentales y crónicas como la depresión y 
+                    el parkinson.</p>
+                    <div>
+                        <img src="../Inicio/pngegg.png" alt="Salud" width="35%" height="35%">
+                    </div>
+                </div>
+            </section>
+
+            <section class="bicicleta2">
+                <div class="bicicleta_bene">
+                    <h1>Fortaleces más que los músculos de las piernas:</h1> 
+                    <p class="bici">Además de ejercitar los músculos de las piernas, también te ayudará a formar los glúteos,
+                    abdominales, brazos y hombros.</p>
+                    <div>
+                        <img src="../Inicio/bici.png" alt="Bicicleta" width="30%" height="30%">
+                    </div>
+                </div>
+                <div class="bicicleta_bene">
+                    <h1>Evita la obesidad y mejora el control del peso:</h1>
+                    <p class="bici">Practicar ciclismo aumenta tu tasa metabólica, desarrolla músculo y quema grasa corporal, 
+                    quemando hasta 300 calorías por hora.</p>
+                    <div>
+                        <img src="../Inicio/Lovepik_com-400207610-body-weight-meter.png" alt="Peso" width="30%" height="30%">
+                    </div>
+                </div>
+                <div class="bicicleta_bene">
+                    <h1>Reduce los niveles de estrés:</h1>
+                    <p class="bici"> Como ya lo habíamos mencionado, el ejercicio aumenta tu salud general y tu sentido de bienestar, 
+                    lo que aporta energía a tu ritmo de vida todos los días.</p>
+                    <div>
+                        <img src="../Inicio/estres.png" alt="Planeta" width="35%" height="35%">
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <div class="figura">
+            <h2>Programas para distintas edades:</h2>
+            <p>Niños (10 a 12 años)</p>
+            <p>Adolescentes (13 a 15años)</p>
+            <p>Jóvenes (16 a más años)</p>   
+        </div>
+
+        <div class="figura">
+            <h2>Programas que te enseñaremos:</h2>
+            <p>Ciclismo en sala</p>
+            <p>Ciclismo en pista</p>
+            <p>Ciclismo extremo</p>
+            <p>Ciclismo BMX</p>
+            <p>Ciclismo freestyle</p>
+        </div>
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="figura1">
+            <h2>
+                Nuestra Sedes:
+            </h2>
+            <a href="../Sedes/sedes.html" target="_blank">
+                AQUÍ PUEDES ENCONTRAR LAS SEDES QUE TENEMOS.
+            </a>
+        </div>
+    </main>
+
+    <section class="inicio_comentar" id="comentarios">
+        <h2>¡Déjanos tus opiniones acerca de nuestros programas y metodologías!</h2>
+        <div>
+            <a class="envianos" href="../Inicio/seccioncomentar.html" target="_blank">
+                <b>→ Enviar un comentario</b>
+            </a>
+        </div>
+    </section>
+
+    <br><br><br><br>
+    
+    <section id="abc">
+        <nav class="btn-inicio">
+            <a href="#navegador">IR A INICIO</a>
+        </nav>
+    </section>
+</main>
+
+<br><br>
+
+<footer class="derechos">
+    <h2>@Derechos Reservados.</h2>
+</footer>
+
+</body>
+</html>
+
+
+

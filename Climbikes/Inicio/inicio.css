@@ -1,0 +1,436 @@
+.climbikes{
+    width: 100.3%;
+    background-color: rgb(177, 112, 177);
+    height: 80px;
+    box-shadow: 0 0 6px rgb(105, 99, 99);
+}
+
+.hamburger{
+    position: fixed;
+    z-index: 10;
+    width: 2.4%;
+    height: 4%;
+    padding-left: 800px;
+    padding-top: 29px;
+    cursor: pointer;
+}
+
+.menu-navegacion{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100%;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: translate(110%);
+    box-shadow: 0 0 9px rgb(104, 104, 104);
+}
+
+.navegacion{
+    color: rgb(141, 36, 141);
+    font-family: Calibri;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.ancho{
+    display: flex;
+    width: 30%;
+    height: 70px;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 60px; 
+    color: darkred;
+}
+
+.logo{
+    padding-right: 15px;
+    padding-top: 13px;
+    width: 50px;
+    height: 50px;
+}
+
+.spread{
+    transform: translate(0);
+}
+
+.bienvenida{
+    text-align: center;
+    margin-top: 60px;
+    color: darkred;
+    font-family: Cambria;
+    font-size: 50px;
+}
+
+a[href="#somos"], a[href="#beneficios"], a[href="#elegirnos"], a[href="#comentarios"]{
+    background-color: rgb(177, 112, 177);
+    display: block;
+    color: rgb(31, 31, 120);
+    padding: 5px;
+    margin: 14px 40px 14px 40px;
+    text-align: center;
+    font-family: Calibri;
+    text-decoration: none;
+    border-radius: .5em;
+    font-weight: bold;
+    scroll-behavior: smooth;
+}
+
+[id="somos"]>h2, [id="beneficios"]>h2{
+    text-align: center;
+    color: rgb(176, 0, 0);
+    font-family: Calibri;
+    font-size: 35px;
+    margin-top: 40px;
+}
+
+[id="somos"]>p, [id="beneficios"]>p {
+    text-align: center;
+    font-size: 22px;
+    font-family: Calibri;
+    color: rgb(32, 32, 150);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.mision{
+    background-color: rgb(211, 211, 211);
+    border: 1.5px solid rgb(211, 151, 151);
+    border-radius: 25px;
+    margin: 40px;
+    padding-left: 20px;
+    box-shadow: 0 0 7px rgb(78, 31, 31)
+}
+
+.mision>h3{
+    color: rgb(176, 0, 0);
+    padding-left: 20px;
+    font-size: 30px;
+    font-family: Calibri;
+    text-decoration: underline;
+}
+
+.mision>ol, .mision>p{
+    font-size: 22px;
+    font-family: Calibri;
+    color: rgb(32, 32, 150);
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+img[src="c4.jpeg"], img[src="a1.jpg"], img[src="hidratacion.png"] {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 600px;
+    border: 4px solid rgb(211, 211, 211);
+    border-radius: 25px;
+}
+
+[id="elegirnos"]>h2{
+    text-align: center;
+    color: rgb(176, 0, 0);
+    font-family: Calibri;
+    font-size: 35px;
+    margin-top: 40px;
+}
+
+[id="beneficios"]>h2{
+    text-align: center;
+    color: rgb(176, 0, 0);
+    font-family: Calibri;
+    font-size: 35px;
+    margin-top: 40px;
+}
+
+p[class="ciclismo"]{
+    text-align: center;
+    font-size: 26px;
+    color: rgb(143, 49, 143);
+    font-family: Calibri;
+}
+
+.bicicleta2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bicicleta_bene{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: 0 0 6px rgb(104, 104, 104);
+    box-shadow: black;
+    width: 26%;
+    height: 290px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.bicicleta_bene>h1{
+    color: purple;
+    font-family: Calibri light;
+    font-size: 18px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.bicicleta_bene img{
+    padding-top: 5px;
+}
+
+.bicicleta2>ol{
+    color: rgb(32, 32, 150);
+    font-family: Calibri;
+    font-size: 22px;
+}
+
+p[class="bici"]{
+    color: blue;
+    font-family: Calibri;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div[class="figura"]{
+    display: inline;
+    border: 3px solid rgba(0, 0, 0, 0.114);
+    font-size: 18px;
+    height: 300px;
+    float: left;
+    padding: 15px 75px 15px 75px;
+    margin: 0px 17px 0px 20px;
+    text-align: center;
+    color: darkred;
+    background: rgb(177, 112, 177);
+    font-family: Cambria;
+    margin-top: 40px;
+}
+
+div[class="figura1"]{
+    display: block;
+    text-align: center;
+    margin: 130px auto;
+    padding: 25px 114px 25px 114px;
+    height: 160px;
+    width: 400px;
+    border: 2px solid rgba(0, 0, 0, 0.126);
+    border-radius: 40px 0px 40px 0px;
+    background: rgb(177, 112, 177);
+}
+
+.figura>p{
+    color: rgb(176, 221, 239);
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Calibri;
+}
+
+.figura1>h2{
+    color: darkred;
+    font-size: 30px;
+    font-family: Cambria;
+}
+
+.figura1>a{
+    color: rgb(176, 221, 239);
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Calibri;
+    font-size: 20px;
+}
+
+section[class="inicio_comentar"]{
+    color: purple;
+    font-family: Calibri light;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-image: linear-gradient(#93b7f4 0%, #9aa2d0 100%);
+    border: 5px double white;
+    border-radius: 20px;
+    height: 110px;
+}
+
+.envianos{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(128, 0, 0);
+}
+
+a[href="#navegador"]{
+    padding: 18px;
+    color: rgb(2, 2, 84);
+    background-color: rgb(177, 112, 177);
+    border-radius: 40px;
+    border: 5px double rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: Calibri;
+}
+
+.contenedor{
+    background-image: linear-gradient(-800deg, #1c1c1cd2 10%, #191919d3 80%);
+    width: 740px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgba(180, 241, 255, 0);
+    margin-left: 260px;
+    margin-right: 30px;
+    border-radius: 8px;
+}
+
+.conten{
+    background-image: linear-gradient(-800deg, #1c1c1ccc 10%, #191919cb 80%);
+    width: 740px;
+    font-family: 'Open sans';
+    font-size: 20px;
+    border: 1px solid rgba(204, 246, 255, 0);
+    margin-left: 260px;
+    margin-right: 30px;
+    border-radius: 8px;
+    color: rgb(19, 19, 19); 
+}
+
+.comentarioss{
+    font-size: 16px;
+    color: rgb(0, 0, 90);
+}
+
+
+.contenedor-agg-com{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.imagen-usuario{
+    width: 50px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.img{
+    width: 50px;
+}
+
+.input-com{
+    width: 609px;
+    height: 174px;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    gap: 4px;
+    color: white;
+    font-family: Cambria;
+}
+
+#comentar{
+    outline: none;
+    border: 0;
+    width: 95%;
+    height: 50px;
+    padding: 0px 10px 0px 10px;
+    font-size: 15px;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(196, 164, 255);
+    transition-duration: 200ms;
+    color: rgb(255, 255, 255);
+}
+
+#nombre, #apellido, #correo{
+    background-color: #d8c3ff;
+    text-align: left;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 22px;
+    margin-left: 5px;
+    margin-bottom: 17px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    
+}
+
+.alinear{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#comentar::placeholder{
+    color: rgba(255, 255, 255, 0.811);
+}
+
+#nuevoComentario:focus{
+    border-bottom: 2px solid rgb(100, 73, 255);
+}
+
+.btn-agg{
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 5px 0px 5px;
+}
+
+button{
+    padding: 12px 20px 12px 20px;
+    border-radius: 20px;
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    margin-right: 20px;
+    cursor: pointer;
+    background: linear-gradient(
+      60deg,
+      #5963ca,
+      #5b62b9
+    );
+    color: #ffffff;
+    box-shadow: 0 0 6px rgb(172, 172, 245);
+    border: 1px solid rgba(255, 255, 255, 0.441)
+}
+
+h3[class="usuario"]{
+    font-size: 20px;
+    padding: 10px;
+    background-color: #5963ca;
+}
+
+.borde{
+    padding-top: 2px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    margin: 15px;
+    background-image: linear-gradient(800deg, #c48787f6 10%, #8680ff70 80%);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+img[src="../Inicio/kisspng-computer-icons-user-clip-art-user-5abf13db5624e4.1771742215224718993529.png"]{
+    width: 35px;
+    height: 35px;
+    padding-top: 14px;
+    margin-right: 10px;
+}
+
+.derechos{
+    font-family: Calibri light;
+    font-size: 12px;
+    color: rgb(90, 86, 86);
+}
